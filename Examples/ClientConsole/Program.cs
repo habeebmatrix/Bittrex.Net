@@ -19,6 +19,12 @@ namespace Examples
                 LogVerbosity = LogVerbosity.Info,
                 LogWriters = new List<TextWriter>() { Console.Out }
             });
+            BittrexSocketClient.SetDefaultOptions(new BittrexSocketClient()
+            {
+                ApiCredentials = new ApiCredentials("APIKEY", "APISECRET"),
+                LogVerbosity = LogVerbosity.Info,
+                LogWriters = new List<TextWriter>() { Console.Out }
+            });
 
             using (var client = new BittrexClient())
             {
